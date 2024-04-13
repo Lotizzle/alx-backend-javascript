@@ -16,11 +16,11 @@ class Building {
     if (sqft === undefined || sqft === null) {
       throw new Error('sqft must be defined');
     } else if (typeof sqft === 'string') {
-        throw new Error('sqft must be a number');
+      throw new Error('sqft must be a number');
     } else if (typeof sqft !== 'number' || sqft <= 0) {
-        throw new Error('sqft must be a positive number');
+      throw new Error('sqft must be a positive number');
     } else if (!Number.isFinite(sqft)) {
-        throw new Error('sqft must be a finite number');
+      throw new Error('sqft must be a finite number');
     }
     this._sqft = Number(sqft);
   }
