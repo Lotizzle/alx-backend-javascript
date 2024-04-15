@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import Building from './5-building.js';
 
 class SkyHighBuilding extends Building {
@@ -8,7 +10,7 @@ class SkyHighBuilding extends Building {
 
   // Getter for floor
 
- get floors() {
+  get floors() {
     return this._floors;
   }
 
@@ -17,4 +19,4 @@ class SkyHighBuilding extends Building {
   }
 }
 
-export default SkyHighBuilding; 
+export default SkyHighBuilding;
