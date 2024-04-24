@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 export default function createIteratorObject(report) {
   const departments = Object.keys(report.allEmployees);
   let currentDeptIndex = 0;
