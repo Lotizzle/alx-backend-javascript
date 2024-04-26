@@ -5,8 +5,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const userPromise = signUpUser(firstName, lastName);
   const photoPromise = uploadPhoto(fileName);
 
-  let userResult; let
-    photoResult;
+  let userResult, photoResult;
 
   try {
     userResult = await userPromise;
