@@ -2,16 +2,19 @@ const http = require('http');
 const url = require('url');
 const fs = require('fs').promises;
 
+const port = 1245;
+const hostname = '127.0.0.1';
+
 async function countStudents(path) {
   try {
     const data = await fs.readFile(path, 'utf8');
-    const lines = data.split('\n').filter(line => line.trim() !== '');
+    const lines = data.split('\n').filter((line) => line.trim() !== '');
     lines.shift();
 
     const fieldCounts = {};
     const students = [];
 
-    lines.forEach(line => {
+    lines.forEach((line) => {
       const [firstname, lastname, age, field] = line.split(',');
 
       if (firstname && lastname && age && field) {
@@ -62,9 +65,8 @@ const app = http.createServer(async (req, res) => {
   }
 });
 
-const port = 1245;
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 
 module.exports = app;
