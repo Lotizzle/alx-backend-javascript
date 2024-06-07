@@ -2,14 +2,22 @@
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
   "description": "Project for unit testing with Mocha",
-  "main": "1-calcul.js",
+  "main": "2-calcul_chai.js",
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
+  "keywords": [
+    "unittest",
+    "mocha",
+    "chai",
+    "javascript"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "mocha": "^10.4.0"
+  },
+  "dependencies": {
+    "chai": "^5.1.1"
   }
 }
