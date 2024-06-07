@@ -1,7 +1,7 @@
 {
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "Project for unit testing with Mocha",
+  "description": "Project for unit testing with Mocha, Chai, and Sinon",
   "main": "2-calcul_chai.js",
   "scripts": {
     "test": "mocha"
@@ -10,6 +10,7 @@
     "unittest",
     "mocha",
     "chai",
+    "sinon",
     "javascript"
   ],
   "author": "",
@@ -18,6 +19,7 @@
     "mocha": "^10.4.0"
   },
   "dependencies": {
-    "chai": "^5.1.1"
+    "chai": "^5.1.1",
+    "sinon": "^18.0.0"
   }
 }
