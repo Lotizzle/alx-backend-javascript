@@ -18,14 +18,14 @@ describe('sendPaymentRequestToApi', () => {
     it('should log the total when called with 100 and 30', () => {
         sendPaymentRequestToApi(100, 30);
 
-	expect(consoleSpy.calledOnce)to.be.true;
+	expect(consoleSpy.calledOnce).to.be.true;
 	expect(consoleSpy.calledWithExactly('The total is: 130'))to.be.true;
     });
 
     it('should log the total when called with 10 and 20', () => {
         sendPaymentRequestToApi(10, 20);
 
-        expect(consoleSpy.calledOnce)to.be.true;
+        expect(consoleSpy.calledOnce).to.be.true;
         expect(consoleSpy.calledWithExactly('The total is: 30'))to.be.true;
     });
 });
