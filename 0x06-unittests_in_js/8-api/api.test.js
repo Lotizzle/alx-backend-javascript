@@ -1,28 +1,27 @@
 // api.test.js
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
-const app = require('./api'); // Assuming your server is exported from api.js
+const request = require('supertest');
+const { expect } = require('chai');
+const app = require('./api');
 
-const { expect } = chai;
-chai.use(chaiHttp);
+describe('Index page', () => {
+  let server;
 
-describe('Index Page', () => {
-  it('should return status code 200', (done) => {
-    chai.request(app)
-      .get('/')
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        done();
-      });
+  before((done) => {
+    server = app.listen(7865, done);
   });
 
-  it('should return the correct result', (done) => {
-    chai.request(app)
-      .get('/')
-      .end((err, res) => {
-        expect(res.text).to.equal('Welcome to the payment system');
-        done();
-      });
+  after((done) => {
+    server.close(done);
+  });
+
+  it('should return status code 200', async () => {
+    const res = await request(app).get('/');
+    expect(res.status).to.equal(200);
+  });
+
+  it('should return the correct result', async () => {
+    const res = await request(app).get('/');
+    expect(res.text).to.equal('Welcome to the payment system');
   });
 });
