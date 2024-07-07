@@ -1,12 +1,11 @@
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
   // Getter and setter for name
-
   get name() {
     return this._name;
   }
@@ -20,7 +19,6 @@ class HolbertonCourse {
   }
 
   // Getter and setter for length
-
   get length() {
     return this._length;
   }
@@ -34,17 +32,16 @@ class HolbertonCourse {
   }
 
   // Getter and setter for students
-
   get students() {
     return this._students;
   }
 
   set students(newStudents) {
-    if (Array.isArray(newStudents)
-        && newStudents.every((student) => typeof student === 'string')) {
+    if (Array.isArray(newStudents) && 
+        newStudents.every(student => typeof student === 'string')) {
       this._students = newStudents;
     } else {
-      throw new TypeError('Students must be an array');
+      throw new TypeError('Students must be an array of strings');
     }
   }
 }
