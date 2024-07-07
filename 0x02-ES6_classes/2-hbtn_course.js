@@ -2,7 +2,7 @@ class HolbertonCourse {
   constructor(name, length, students) {
     this._name = name;
     this._length = length;
-    this._length = students;
+    this._students = students;
   }
 
   // Getter and setter for name
@@ -40,7 +40,8 @@ class HolbertonCourse {
   }
 
   set students(newStudents) {
-    if (Array.isArray(newStudents)) {
+    if (Array.isArray(newStudents)
+        && newStudents.every((student) => typeof student === 'string')) {
       this._students = newStudents;
     } else {
       throw new TypeError('Students must be an array');
