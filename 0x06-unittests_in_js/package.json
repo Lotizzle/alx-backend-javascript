@@ -1,14 +1,16 @@
 {
-  "name": "task_0",
+  "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha 0-calcul.test.js"
+    "test": "mocha"
+  },
+  "dependencies": {
+    "chai": "^4.3.4",
+    "esm": "^3.2.25"
   },
   "devDependencies": {
-    "mocha": "^10.7.0"
-  },
-  "author": "",
-  "license": "ISC"
+    "mocha": "^8.4.0"
+  }
 }
+
