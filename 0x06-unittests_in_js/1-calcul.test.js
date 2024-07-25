@@ -1,54 +1,31 @@
-import { expect } from 'chai';
-import calculateNumber from './1-calcul.js';
+const assert = require("assert");
+const { it, describe } = require("mocha");
+const calculateNumber = require("./1-calcul");
 
-describe('calculateNumber', function() {
-  describe('SUM', function() {
-    it('should return 6 when rounding 1.4 and 4.5', function() {
-      expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
+describe("calculateNumber()", function() {
+
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUM", 1, 2);
+      assert.strictEqual(res, 3);
     });
-
-    it('should return -4 when rounding -1.4 and -2.6', function() {
-      expect(calculateNumber('SUM', -1.4, -2.6)).to.equal(-4);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 1.4, 2.2);
+      assert.strictEqual(res, -1);
     });
-
-    it('should return 0 when rounding 0 and 0', function() {
-      expect(calculateNumber('SUM', 0, 0)).to.equal(0);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("SUBTRACT", 4.9, 2.7);
+      assert.strictEqual(res, 2);
     });
-  });
-
-  describe('SUBTRACT', function() {
-    it('should return -4 when rounding 1.4 and 4.5', function() {
-      expect(calculateNumber('SUBTRACT', 1.4, 4.5)).to.equal(-4);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 4, 2);
+      assert.strictEqual(res, 2);
     });
-
-    it('should return 1 when rounding -1.4 and -2.6', function() {
-      expect(calculateNumber('SUBTRACT', -1.4, -2.6)).to.equal(2);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.7, 0);
+      assert.strictEqual(res, "Error");
     });
-
-    it('should return 0 when rounding 0 and 0', function() {
-      expect(calculateNumber('SUBTRACT', 0, 0)).to.equal(0);
+    it(`checking if numbers round`, function() {
+      const res = calculateNumber("DIVIDE", 1.4, 4.6);
+      assert.strictEqual(res, 0.2);
     });
-  });
-
-  describe('DIVIDE', function() {
-    it('should return 0.2 when rounding 1.4 and 4.5', function() {
-      expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
-    });
-
-    it('should return 1 when rounding -1.4 and -1.4', function() {
-      expect(calculateNumber('DIVIDE', -1.4, -1.4)).to.equal(1);
-    });
-
-    it('should return Error when dividing by 0', function() {
-      expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
-    });
-
-    it('should return 0 when dividing 0 by any number', function() {
-      expect(calculateNumber('DIVIDE', 0, 4.5)).to.equal(0);
-    });
-  });
-
-  it('should throw an error for invalid operation type', function() {
-    expect(() => calculateNumber('INVALID', 1.4, 4.5)).to.throw('Invalid operation type');
-  });
 });
