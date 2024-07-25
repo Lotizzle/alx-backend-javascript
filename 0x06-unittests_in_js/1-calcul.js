@@ -1,20 +1,18 @@
-function calculateNumber(type, a, b) {
-  const roundedA = Math.round(a);
-  const roundedB = Math.round(b);
+export default function calculateNumber(type, a, b) {
+  const aRounded = Math.round(a);
+  const bRounded = Math.round(b);
 
   switch (type) {
     case 'SUM':
-      return roundedA + roundedB;
+      return aRounded + bRounded;
     case 'SUBTRACT':
-      return roundedA - roundedB;
+      return aRounded - bRounded;
     case 'DIVIDE':
-      if (roundedB === 0) {
+      if (bRounded === 0) {
         return 'Error';
       }
-      return roundedA / roundedB;
+      return aRounded / bRounded;
     default:
       throw new Error('Invalid operation type');
   }
 }
-
-module.exports = calculateNumber;
