@@ -1,7 +1,6 @@
 const http = require('http');
 const { readFile } = require('fs');
 
-
 function countStudents(fileName) {
   const students = {};
   const fields = {};
